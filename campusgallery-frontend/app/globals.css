@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen text-slate-800;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  }
+}
+
+@layer components {
+  .modern-card {
+    @apply bg-white/80 backdrop-blur-xl border border-slate-200/60 rounded-3xl shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+  }
+  
+  .modern-card-glass {
+    @apply bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-2xl border border-white/30 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl;
+  }
+  
+  .btn-modern-primary {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  
+  .btn-modern-secondary {
+    @apply bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300 text-slate-700 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 border border-slate-300 hover:border-slate-400 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .btn-modern-outline {
+    @apply bg-white/50 backdrop-blur-sm hover:bg-white/80 text-indigo-600 px-8 py-3 rounded-2xl font-semibold transition-all duration-300 border-2 border-indigo-300 hover:border-indigo-400 hover:text-indigo-700 shadow-md hover:shadow-lg;
+  }
+  
+  .input-modern {
+    @apply bg-white/70 backdrop-blur-sm border-2 border-slate-200 rounded-2xl px-6 py-4 text-slate-800 placeholder-slate-500 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 focus:outline-none transition-all duration-300 shadow-lg focus:shadow-xl;
+  }
+  
+  .nav-modern-link {
+    @apply text-slate-600 hover:text-indigo-600 px-6 py-3 rounded-2xl hover:bg-white/60 transition-all duration-300 font-semibold backdrop-blur-sm border border-transparent hover:border-white/40;
+  }
+  
+  .nav-modern-link.active {
+    @apply text-indigo-700 bg-white/80 border-indigo-200 shadow-md;
+  }
+  
+  .badge-modern {
+    @apply bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-800 px-4 py-2 rounded-2xl text-sm font-bold border border-indigo-200 shadow-sm;
+  }
+  
+  .text-modern-gradient {
+    @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent font-black;
+  }
+  
+  .text-modern-title {
+    @apply text-5xl md:text-7xl font-black text-modern-gradient tracking-tight;
+  }
+  
+  .modern-hero-section {
+    @apply bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-3xl p-16 mb-16 border border-indigo-200/50 shadow-2xl backdrop-blur-sm;
+  }
+  
+  .modern-stat-card {
+    @apply bg-gradient-to-br from-white/80 to-slate-50/80 backdrop-blur-xl p-8 rounded-3xl border border-slate-200/60 shadow-xl hover:shadow-2xl transition-all duration-300 text-center hover:-translate-y-1;
+  }
+  
+  .modern-artwork-card {
+    @apply modern-card p-8 hover:scale-105 transition-all duration-500 cursor-pointer;
+  }
+  
+  .modern-form-section {
+    @apply modern-card p-10 space-y-10;
+  }
+  
+  .modern-alert {
+    @apply p-8 rounded-3xl border-2 font-semibold shadow-lg;
+  }
+  
+  .modern-alert-success {
+    @apply modern-alert bg-gradient-to-r from-emerald-50 to-green-50 border-emerald-200 text-emerald-800;
+  }
+  
+  .modern-alert-error {
+    @apply modern-alert bg-gradient-to-r from-red-50 to-pink-50 border-red-200 text-red-800;
+  }
+  
+  .modern-alert-info {
+    @apply modern-alert bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 text-blue-800;
+  }
+  
+  .modern-loading {
+    @apply inline-block w-6 h-6 border-4 border-slate-300 border-t-transparent rounded-full animate-spin;
+  }
+  
+  .modern-tag {
+    @apply bg-gradient-to-r from-slate-100 to-slate-200 text-slate-700 px-4 py-2 rounded-2xl text-sm font-semibold border border-slate-300 shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .modern-glass-effect {
+    @apply bg-white/20 backdrop-blur-2xl border border-white/30 shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes bounce-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-indigo-400;
+}
+
+/* 选择文本颜色 */
+::selection {
+  @apply bg-indigo-200 text-indigo-900;
+}
